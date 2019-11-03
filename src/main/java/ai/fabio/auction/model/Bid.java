@@ -8,6 +8,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "Bid")
 public class Bid {
@@ -25,11 +27,12 @@ public class Bid {
 
 	
 
-
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "traderid", insertable = true, updatable = true)
 	private Trader trader;
-
+	
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "productid", insertable = true, updatable = true)
 	private Product product;
