@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style>
+.inline {
+	display: inline-block;
+	border: 1px solid red;
+	margin: 10px;
+}
+</style>
+<body>
+	<h1>Match List</h1>
+
+	
+	<p></p>
+	
+	<div>
+	All Bids
+	<table border="1">
+		<th>Id Bid</span></th>
+		<th>Type</span></th>
+		<th>Quantity</span></th>
+		<th>Type</span></th>
+
+		<th>Trader</span></th>
+		<tr th:each="bid : ${bids}">
+
+			<td><span th:text="${bid.bidid}"> </span></td>
+			<td><span th:text="${bid.type}"> </span></td>
+			<td><span th:text="${bid.price}"> </span></td>
+			<td><span th:text="${bid.quantity}"> </span></td>
+			<td><span th:text="${bid.trader.name}"> </span></td>
+
+		</tr>
+	</table>
+	</div>
+
+	<div>
+		<div class='inline'>
+			Sell
+			<table border="1">
+				<th>Id Bid</span></th>
+				<th>Type</span></th>
+				<th>Price</span></th>
+				<th>Quantity</span></th>
+				<th>Trader</span></th>
+				<tr th:each="sell : ${sells}">
+					<td><span th:text="${sell.bidid}"> </span></td>
+					<td><span th:text="${sell.type}"> </span></td>
+					<td><span th:text="${sell.price}"> </span></td>
+					<td><span th:text="${sell.quantity}"> </span></td>
+					<td><span th:text="${sell.trader.name}"> </span></td>
+				</tr>
+			</table>
+		</div>
+
+		<div class='inline'>
+			Buy
+			<table border="1">
+				<th>Id Bid</span></th>
+				<th>Type</span></th>
+				<th>Price</span></th>
+				<th>Quantity</span></th>
+				<th>Trader</span></th>
+				<tr th:each="buy : ${buys}">
+
+					<td><span th:text="${buy.bidid}"> </span></td>
+					<td><span th:text="${buy.type}"> </span></td>
+					<td><span th:text="${buy.price}"> </span></td>
+					<td><span th:text="${buy.quantity}"> </span></td>
+					<td><span th:text="${buy.trader.name}"> </span></td>
+
+				</tr>
+			</table>
+		</div>
+		
+		<div class='inline'>
+			Clearing Price
+			<table border="1">
+				
+				<th>Price</span></th>
+				<tr th:each="clearing : ${clearingPrice}">
+					<td><span th:text="${clearing}"> </span></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	
+	<div>
+	
+	Unmatched Sell
+		<table border="1">
+				<th>Id Bid</span></th>
+				<th>Type</span></th>
+				<th>Price</span></th>
+				<th>Quantity</span></th>
+				<th>Trader</span></th>
+				<tr th:each="sell : ${residualA}">
+					<td><span th:text="${sell.bidid}"> </span></td>
+					<td><span th:text="${sell.type}"> </span></td>
+					<td><span th:text="${sell.price}"> </span></td>
+					<td><span th:text="${sell.quantity}"> </span></td>
+					<td><span th:text="${sell.trader.name}"> </span></td>
+				</tr>
+			</table>
+	</div>
+	<div>
+		Unmatched Buy
+		<table border="1">
+				<th>Id Bid</span></th>
+				<th>Type</span></th>
+				<th>Price</span></th>
+				<th>Quantity</span></th>
+				<th>Trader</span></th>
+				<tr th:each="sell : ${residualB}">
+					<td><span th:text="${sell.bidid}"> </span></td>
+					<td><span th:text="${sell.type}"> </span></td>
+					<td><span th:text="${sell.price}"> </span></td>
+					<td><span th:text="${sell.quantity}"> </span></td>
+					<td><span th:text="${sell.trader.name}"> </span></td>
+				</tr>
+			</table>
+	</div>
+	
+
+
+	<p></p>
+
+
+	<a href="/bid">New Bid</a>
+
+	<a href="/bid/list">List</a>
+	
+	<a href="/bid/match">Match</a>
+</body>
+</html>
