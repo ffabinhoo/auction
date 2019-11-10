@@ -3,6 +3,7 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**
 !**/src/test/**
+bin/
 
 ### STS ###
 .apt_generated
@@ -15,6 +16,9 @@ target/
 mvnw
 mvnw.cmd
 .mvn/
+gradle/
+gradlew
+gradlew.bat
 
 ### IntelliJ IDEA ###
 .idea
@@ -32,3 +36,4 @@ build/
 
 ### VS Code ###
 .vscode/
+/.gradle/
