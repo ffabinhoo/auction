@@ -58,7 +58,7 @@ public class DBConfiguration {
 	@Profile("prod")
 	@Bean
 	public String prodDatabaseConnection() {
-		System.out.println("DB Connection to RDS_PROD - High Performance Instance");
+		System.out.println("DB Connection to PROD - High Performance Instance");
 		System.out.println(url);
 		return "DB Connection to RDS_PROD - High Performance Instance";
 	} 
